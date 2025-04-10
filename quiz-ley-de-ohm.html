@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz Ley de Ohm</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; padding: 2rem; }
+    .question { margin-bottom: 1.5rem; }
+    button { padding: 0.5rem 1rem; font-size: 1rem; }
+    .error { color: red; font-weight: bold; margin-top: 1rem; }
+  </style>
+</head>
+<body>
+  <h1>Quiz: Ley de Ohm</h1>
+
+  <form id="quizForm">
+    <div class="question">
+      <p>1. ¿Cuál es la fórmula básica de la Ley de Ohm?</p>
+      <label><input type="radio" name="q1" value="a" /> a) V = I × R</label><br />
+      <label><input type="radio" name="q1" value="b" /> b) P = V / R</label><br />
+      <label><input type="radio" name="q1" value="c" /> c) I = R / V</label><br />
+      <label><input type="radio" name="q1" value="d" /> d) V = P × I</label>
+    </div>
+
+    <div class="question">
+      <p>2. Si una resistencia de 4 ohm tiene una corriente de 2 A, ¿cuál es el voltaje?</p>
+      <label><input type="radio" name="q2" value="a" /> a) 2 V</label><br />
+      <label><input type="radio" name="q2" value="b" /> b) 6 V</label><br />
+      <label><input type="radio" name="q2" value="c" /> c) 8 V</label><br />
+      <label><input type="radio" name="q2" value="d" /> d) 4 V</label>
+    </div>
+
+    <div class="question">
+      <p>3. ¿Qué unidad se usa para medir la resistencia eléctrica?</p>
+      <label><input type="radio" name="q3" value="a" /> a) Voltios</label><br />
+      <label><input type="radio" name="q3" value="b" /> b) Amperios</label><br />
+      <label><input type="radio" name="q3" value="c" /> c) Ohmios</label><br />
+      <label><input type="radio" name="q3" value="d" /> d) Vatios</label>
+    </div>
+
+    <button type="submit">Enviar</button>
+    <p class="error" id="errorMsg"></p>
+  </form>
+
+  <script>
+    document.getElementById('quizForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const q1 = document.querySelector('input[name="q1"]:checked')?.value;
+      const q2 = document.querySelector('input[name="q2"]:checked')?.value;
+      const q3 = document.querySelector('input[name="q3"]:checked')?.value;
+      const errorMsg = document.getElementById('errorMsg');
+
+      if (q1 === 'a' && q2 === 'c' && q3 === 'c') {
+        window.location.href = 'https://youtube.com/shorts/jO4ZOWjL3Hs';
+      } else {
+        errorMsg.textContent = 'Por favor, son preguntas fáciles. Vuelve a intentarlo.';
+      }
+    });
+  </script>
+</body>
+</html>
